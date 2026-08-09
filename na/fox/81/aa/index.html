@@ -15,34 +15,27 @@
         Click to Go to Level 5!
     </button>
 
-    <!-- 2. The Massive Scroll Space -->
-    <!-- This creates a huge blank void forcing the user to scroll down 3000 pixels -->
     <div style="height: 30000px;"></div>
 
-    <!-- 3. The Secret Hidden Link at the very bottom -->
+    
     <p style="font-size: 24px; padding-bottom: 100px;">
         <a href="https://github.io" style="color: #2ed573; text-decoration: none;">
             [ Escape Level 4: Click here to proceed to Level 5 ]
         </a>
     </p>
 
-    <!-- 4. The JavaScript that makes the button run away -->
+    
     <script>
         const btn = document.getElementById('runBtn');
 
-        // This triggers whenever the mouse moves over the button
+        
         btn.addEventListener('mouseover', function() {
-            // Get random positions based on the browser window size
             const randomX = Math.floor(Math.random() * (window.innerWidth - 200));
-            // Keep the running area in the top section so it doesn't drop down to the secret link
+            
             const randomY = Math.floor(Math.random() * 400) + 100; 
-
-            // Instantly move the button to the new coordinates
             btn.style.left = randomX + 'px';
             btn.style.top = randomY + 'px';
         });
-
-        // Anti-cheat: In case they manage to click it using keyboard tricks
         btn.addEventListener('click', function() {
             alert("Nice try, but you can't click this button!");
         });
