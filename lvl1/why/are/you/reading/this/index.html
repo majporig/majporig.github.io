@@ -1,6 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Level 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1</title>
 </head>
-<body>
-  <p>Hi. Try to do this.</p>
+<body style="font-family: sans-serif; text-align: center; padding-top: 100px; background-color: #f0f0f0;">
+
+    <h2>The Two Sisters traditional English ballad drowning</h2>
+    
+    <!-- 1. The Text Box -->
+    <input type="text" id="answerBox" placeholder="Type your answer here..." style="padding: 10px; font-size: 18px;">
+    
+    <!-- 2. The Submit Button -->
+    <button onclick="checkAnswer()" style="padding: 10px 20px; font-size: 18px; cursor: pointer;">Submit</button>
+
+    <!-- 3. The Message Area -->
+    <p id="feedbackMessage" style="font-size: 20px; font-weight: bold; margin-top: 20px;"></p>
+
+    <!-- 4. The JavaScript Code to Check the Box -->
+    <script>
+    function checkAnswer() {
+        // Get the text that the user typed in, and make it lowercase
+        var userInput = document.getElementById("answerBox").value.toLowerCase().trim();
+        var feedback = document.getElementById("feedbackMessage");
+
+        // Put your secret answer inside the quotes below
+        if (userInput === "The Two Sisters") {
+            feedback.style.color = "green";
+            feedback.innerHTML = "CORRECT! Redirecting you...";
+            
+            // Automatically send them to the next page after 1.5 seconds
+            setTimeout(function() {
+                window.location.href = "https://github.io/omg/lvl2";
+            }, 1500);
+            
+        } else {
+            feedback.style.color = "red";
+            feedback.innerHTML = "Wrong answer! Try again.";
+        }
+    }
+    </script>
+
 </body>
+</html>
