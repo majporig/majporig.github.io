@@ -21,18 +21,18 @@
     <!-- 4. The JavaScript Code to Check the Box -->
     <script>
     function checkAnswer() {
-        // Get the text that the user typed in, and make it lowercase
+        // Converts everything to lowercase and strips accidental outer spaces
         var userInput = document.getElementById("answerBox").value.toLowerCase().trim();
         var feedback = document.getElementById("feedbackMessage");
 
-        // Put your secret answer inside the quotes below
-        if (userInput === "the two sisters") {
+        // .includes checks if "two sisters" is anywhere inside the typed text
+        if (userInput.includes("two sisters")) {
             feedback.style.color = "green";
             feedback.innerHTML = "CORRECT! Redirecting you...";
             
-            // Automatically send them to the next page after 1.5 seconds
+            // Fixed the URL to use your actual repository link
             setTimeout(function() {
-                window.location.href = "https://github.io/omg/lvl2";
+                window.location.href = "https://majporig.github.io/omg/lvl2";
             }, 1500);
             
         } else {
