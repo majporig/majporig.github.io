@@ -2,6 +2,26 @@
   <title>breh</title>
 </head>
 <body style="background-color: black; color: white;">
+    <script>
+    // This function automatically runs the second the page loads
+    window.onload = function() {
+        
+        
+        var password = prompt("Enter password");
 
-  
+        
+        if (password !== null && password.toLowerCase().trim() === "kjashkjsfkjsfhahsdajfhskjhfasfkfkjasfsfkjdsfhhdkgdf23z89zz87f394349g83gu02jjve0v0df8vdf88f9d98fd") {
+            
+            alert("Access Granted!"); // Optional popup message
+            // You can also redirect them here if you want:
+            // window.location.href = "https://github.io";
+            
+        } else {
+            
+            alert("Wrong password. Access Denied.");
+            window.location.reload(); // This reloads the page to force them to try again
+            
+        }
+    };
+  </script>  
 </body>
