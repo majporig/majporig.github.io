@@ -1,1 +1,29 @@
+<head>
+  <title>Ha gotcha</title>
+</head>
+<body style="background-color: black; color: white;">
+  <p>hello</p>
+    <script>
+    // This runs immediately when the page loads
+    window.onload = function() {
+        
+        // 1. Pop up the browser request box
+        var password = prompt("Enter password:");
 
+        // 2. Check if the password is correct (smart lowercase check)
+        if (password !== null && password.toLowerCase().trim() === "sdfslfd34č3g4fdvdć23233rsc6cs68asgcsa64yaz9nv43nn8") {
+            
+            alert("Access Granted!"); // Success message
+            
+            // Redirects to your next level folder
+            window.location.href = "https://majporig.github.io/omg/gg";
+            
+        } else {
+            
+            alert("Wrong password. Access Denied.");
+            window.location.reload(); // Reloads the page to force them to try again
+            
+        }
+    };
+    </script>
+</body>
