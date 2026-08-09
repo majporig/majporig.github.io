@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4</title>
+</head>
+<body style="background-color: black; color: white; text-align: center; padding-top: 100px; margin: 0;">
+
+    <p style="font-size: 30px;">Welcome to Level 4.</p>
+    <p>Just click the button below to proceed to the next level...</p>
+
+    <!-- 1. The Running Button -->
+    <button id="runBtn" style="position: absolute; padding: 15px 30px; font-size: 20px; font-weight: bold; background-color: #ff4757; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.1s ease; left: 45%; top: 250px;">
+        Click to Go to Level 5!
+    </button>
+
+    <!-- 2. The Massive Scroll Space -->
+    <!-- This creates a huge blank void forcing the user to scroll down 3000 pixels -->
+    <div style="height: 3000px;"></div>
+
+    <!-- 3. The Secret Hidden Link at the very bottom -->
+    <p style="font-size: 24px; padding-bottom: 100px;">
+        <a href="https://github.io" style="color: #2ed573; text-decoration: none;">
+            [ Escape Level 4: Click here to proceed to Level 5 ]
+        </a>
+    </p>
+
+    <!-- 4. The JavaScript that makes the button run away -->
+    <script>
+        const btn = document.getElementById('runBtn');
+
+        // This triggers whenever the mouse moves over the button
+        btn.addEventListener('mouseover', function() {
+            // Get random positions based on the browser window size
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 200));
+            // Keep the running area in the top section so it doesn't drop down to the secret link
+            const randomY = Math.floor(Math.random() * 400) + 100; 
+
+            // Instantly move the button to the new coordinates
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+        });
+
+        // Anti-cheat: In case they manage to click it using keyboard tricks
+        btn.addEventListener('click', function() {
+            alert("Nice try, but you can't click this button!");
+        });
+    </script>
+
+</body>
+</html>
 
