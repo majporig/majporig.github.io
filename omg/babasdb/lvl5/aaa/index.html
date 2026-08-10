@@ -1,1 +1,33 @@
+<head>
+  <title>lvl5</title>
+</head>
+<body>
+  <p>what is this</p>
+  <p>litraly empty</p>
+  <br>
+  <input type="text" id="levelBox" placeholder="Type your position..." style="padding: 10px; font-size: 18px; background: #111; color: white; border: 1px solid #333; text-align: center;">
+  <button onclick="checkLevel()" style="padding: 10px 20px; font-size: 18px; cursor: pointer;">Submit</button>
 
+    <!-- Feedback Message Area -->
+  <p id="feedback" style="font-size: 20px; font-weight: bold; margin-top: 20px;"></p>
+  <script>
+    function checkLevel() {
+        var answer = document.getElementById("levelBox").value.toLowerCase().trim();
+        var feedback = document.getElementById("feedback");
+
+        // Checks if the user typed 6 or the word six
+        if (answer === "6" || answer === "six") {
+            feedback.style.color = "green";
+            feedback.innerHTML = "CORRECT. You haven't lost your mind yet. Moving to Level 7...";
+            
+            // Redirect to Level 7 after 2 seconds
+            setTimeout(function() {
+                window.location.href = "https://github.io";
+            }, 2000);
+        } else {
+            feedback.style.color = "red";
+            feedback.innerHTML = "Wrong. You are lost in the maze.";
+        }
+    }
+    </script>
+</body>
